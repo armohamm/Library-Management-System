@@ -37,5 +37,13 @@ body{
            <input type="submit"><br>
          </div>
     </form>
+    <?php
+    if(isset($_SESSION["emptyfields"]))
+      echo '<script>alert("Empty Fields")</script>';
+    if(isset($_SESSION["emailtaken"]))
+      echo '<script>alert("Account already exists")</script>';
+    unset($_SESSION["emailtaken"]);
+    unset($_SESSION["emptyfields"]);
+    ?>
 </body>
 </html>
