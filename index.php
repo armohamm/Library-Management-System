@@ -31,8 +31,8 @@ include 'header.php';
 	<div class="loginBox">
 	<form action = "welcome.php" method="post" >
 		<div class="a1">
-		Enter your username:
-		<input type="text" name="username">
+		Enter your Email:
+		<input type="email" name="username">
 	</div>
 		<br>
 		<div class="a">

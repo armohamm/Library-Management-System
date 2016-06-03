@@ -29,7 +29,7 @@ body{
          </div>
          <div class="a">
            Email:
-           <input type="text" name="email"><br>
+           <input type="email" name="email"><br>
          </div><div class="a">
            Password:
            <input type="password" name="password"><br>

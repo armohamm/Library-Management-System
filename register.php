@@ -14,6 +14,8 @@ $conn=mysqli_connect($servername,$username,$password,$dbname);
 if(!$conn)
 	die("Connection Failed: ").mysqli_connect_error();
 $name=$_POST["name"];
+if($name=="root")
+$_SESSION["emailtaken"]=1;
 $email=$_POST["email"];
 $pass=$_POST["password"];
 if(empty($_POST["name"]) || empty($_POST["email"]) || empty($_POST["password"]))
@@ -38,7 +40,7 @@ echo "Welcome to our library ".$_POST["name"];
 $result=mysqli_query($conn,"SELECT * from user WHERE email='$email'");
  while($row = mysqli_fetch_assoc($result))
  {
- 	echo "<br> Your User Id no. is: ".$row["id"];
+ 	echo "<br><strong> Your User Id no. is: ".$row["id"]."</strong>";
 	$_SESSION["user"]=2;
 	$_SESSION["username"]=$_POST["name"];
 	$_SESSION["password"]=$_POST["password"];
@@ -48,4 +50,3 @@ $result=mysqli_query($conn,"SELECT * from user WHERE email='$email'");
  echo "</html>";
  mysqli_close($conn);
 ?>
-

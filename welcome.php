@@ -14,7 +14,7 @@ if (!$conn) {
 }
 $password = $_POST["password"];
 $username = $_POST["username"];
-$sql="SELECT * from user where name='$username' and password='$password'";
+$sql="SELECT * from user where email='$username' and password='$password'";
 $result=mysqli_query($conn,$sql);
 $count=mysqli_num_rows($result);
 if(!(mysqli_num_rows($result)==1))
@@ -24,7 +24,7 @@ if(!(mysqli_num_rows($result)==1))
   exit();
 }
 $_SESSION["user"]=1;
-if($username=="root")
+if($username=="root@123")
 $_SESSION["authuser"]=1;
 header("Location: book_menu.php");
 echo '</html>';

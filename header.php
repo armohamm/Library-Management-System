@@ -5,9 +5,9 @@
 	<hr>
 	<a href="about.php">About</a> | <a href="contact.php">Contact Us</a> <?php 
 	if(!($_SERVER['PHP_SELF']=="/library/index.php") && ( isset($_SESSION["user"]) || isset($_SESSION["authuser"])))
-	echo '<a href="logout.php">| Logout</a>';
+	echo '| <a href="logout.php">Logout</a>';
 	elseif(!($_SERVER['PHP_SELF']=="/library/index.php"))
-	echo '<a href="index.php">| Login </a>';
+	echo '| <a href="index.php">Login</a>';
 	?>
 	<hr>
 		</div>
