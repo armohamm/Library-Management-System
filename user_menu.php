@@ -35,11 +35,6 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
      </div><div class='a'>
           <a href="stat.php">Click Here to view your profile</a>
      </div>
-     	<p>
-               <div class='a'>
-     		<a href="logout.php">Click Here to log out!</a>
-          </div>
-     	</p>
      </div>
      </body>
      </html>

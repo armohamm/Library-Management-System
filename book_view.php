@@ -39,7 +39,9 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 				<th>Author</th>
 				<th>No of Copies</th>
 				<th>Currently in Stock</th>
-				<th>Action</th>
+				<?php if(isset($_SESSION["authuser"]))
+				echo "<th>Action</th>";
+				?>
 			</tr>
 			<?php
 
@@ -53,6 +55,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 			        	echo "<td>".$row['author']."</td>";
 			        	echo "<td>".$row['no_of_copies']."</td>";
 			        	echo "<td>".$row['stack']."</td>";
+			        	if(isset($_SESSION["authuser"]))
 			        	echo '<td><a href="edit.php?id='.$row['id'].'">Edit</a></td>';
 			        	echo "</tr>";
 			        }
