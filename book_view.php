@@ -25,6 +25,9 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 		text-align: center;
 		margin-top: 20px;
 	}
+	.edits{
+		text-align: center;
+	}
 	</style>
 	<body>
 		<div class='cover'></div>
@@ -36,6 +39,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 				<th>Author</th>
 				<th>No of Copies</th>
 				<th>Currently in Stock</th>
+				<th>Action</th>
 			</tr>
 			<?php
 
@@ -48,11 +52,12 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 			        	echo "<td>".$row['name']."</td>";
 			        	echo "<td>".$row['author']."</td>";
 			        	echo "<td>".$row['no_of_copies']."</td>";
-			        	echo "<td>".$row['stack']."</td";
+			        	echo "<td>".$row['stack']."</td>";
+			        	echo '<td><a href="edit.php?id='.$row['id'].'">Edit</a></td>';
 			        	echo "</tr>";
 			        }
 			     ?>
-		</table>
+			 </table>
 	</div>
 	<div id="a">
 		<?php

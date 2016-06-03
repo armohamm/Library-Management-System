@@ -13,7 +13,8 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
   include 'header.php';
  ?>
 	<head>
-		<h3 style="text-align:center"> Add a book!</h3>
+		<h3 style="text-align:center">
+				Add a book!</h3>
 	</head>
 	<style type="text/css">
 	#f{
@@ -35,6 +36,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 	<body>
 		<div class='cover'></div>
 		 <form method="post" action="book_add1.php">
+
 		 	<div id="f">
 		 	Book name:
 		 	<input type="text" name="name"><br>

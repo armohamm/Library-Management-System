@@ -70,6 +70,7 @@ display: block;
 	  unset($_SESSION["success"]);
 	  if(isset($_SESSION["zerocop"]))
 	  	echo '<script>alert("Copies cannot be less than zero!")</script>';
+	  unset($_SESSION["zerocop"]);
 	  ?>
 	  <p>
 	  	<div id='form'>
