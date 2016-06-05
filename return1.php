@@ -14,15 +14,17 @@ if (!$conn)
 $id=$_POST["id"];
 $pass=$_POST["password"];
 $c=mysqli_query($conn,"SELECT * from user WHERE password='$pass'");
-if(!$c)
+if(mysqli_num_rows($c)==0)
 {
-	echo "Error Encountered: Wrong password";
+	$_SESSION["wrong"]=1;
+	header("Location: return.php");
 	exit();
 }
 $res=mysqli_query($conn,"SELECT * from book WHERE id='$id'");
-if(!$res)
+if(mysqli_num_rows($res)==0)
 {
-	echo"Error Encountered: Wrong Book Id";
+	$_SESSION["wrong"]=1;
+	header("Location: return.php");
 	exit();
 }
 while($row=mysqli_fetch_assoc($res))
@@ -30,22 +32,24 @@ while($row=mysqli_fetch_assoc($res))
 $onstack++;
 if($onstack>$cop)
 {
-	echo "Error Encountered: All copies of this book are already on the shelf!";
+	$_SESSION["cop"]=1;
+	header("Location: return.php");
 	exit();
 }
 $res=mysqli_query($conn,"UPDATE book SET stack='$onstack' WHERE id='$id'");
 if(!$res)
-	exit("Error Encountered: Wrong Book Id");
+	exit("Error Encountered: Connection Problems");
 $row=mysqli_fetch_assoc($c);
 $iss=$row['books_issued'];
 $iss--;
 $res=mysqli_query($conn,"UPDATE user SET books_issued='$iss' WHERE password='$pass'");
 if(!$res)
 {
-	echo "Error Encountered: Wrong password";
+	echo "Error Encountered: Connection Problems";
 	exit();
 }
-echo "Success!";
-echo "<br><a href=\"user_menu.php\">Go back to the menu!</a>";
+$_SESSION["succ"]=1;
+header("Location: return.php");
 echo '</html>';
+exit();
 ?>

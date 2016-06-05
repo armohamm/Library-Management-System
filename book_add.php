@@ -56,6 +56,9 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 		 			 </form>
 		<p>
 			<?php
+			if(isset($_SESSION["empty"]))
+				echo '<script>alert("One or more empty fields")</script>';
+			unset($_SESSION["empty"]);
 			if(isset($_SESSION["success"]))
 				echo '<script>alert("Success!")</script>';
 			unset($_SESSION["success"]);

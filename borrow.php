@@ -9,15 +9,36 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
 }
 ?>
    <head>
-   	<h2>Borrow a book from the library</h2>
+   	<h2 style="text-align:center">Borrow a book from the library</h2>
    </head>
    <body>
+    <div class='cover'></div>
+    <div id="form" style="text-align:center"> 
    	  <form method="post" action="borrow1.php">
-   	  	Book Id:<br>
+        <div id='a' style="margin-bottom:20px">
+   	  	Book Id:
    	  	<input type="number" name="id"><br>
-        Your Password:<br>
-        <input type="password" name="password"><br>
+      </div><div id='b' style="margin-left:10px">
+        Your Password:
+        <input type="password" name="password">
         <input type="submit">
+      </div>
    	  </form>
+      <?php
+      if(isset($_SESSION["succ"]))
+        echo '<script>alert("Success!")</script>';
+      if(isset($_SESSION["wrong"]))
+        echo '<script>alert("Wrong Id or Password")</script>';
+       if(isset($_SESSION["nocop"]))
+        echo '<script>alert("No copies of this book available on the stack")</script>';
+       if(isset($_SESSION["four"]))
+        echo '<script>alert("You cannot issue more than 4 books!")</script>';
+      unset($_SESSION["succ"]);
+      unset($_SESSION["wrong"]);
+      unset($_SESSION["nocop"]);
+      unset($_SESSION["four"]);
+      ?>
+    </div><div id='link' style="text-align:center">
+    <a href="user_menu.php">Go back!</a></div>
    </body>
    </html>

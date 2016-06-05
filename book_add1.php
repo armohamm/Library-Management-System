@@ -18,6 +18,12 @@ if (!$conn)
 $name=$_POST["name"];
 $author=$_POST["author"];
 $cop=$_POST["copies"];
+if(empty($name) || empty($author) || empty($cop))
+{
+ $_SESSION["empty"]=1;
+  header("Location: book_add.php");
+  exit();
+}
 $res=mysqli_query($conn,"SELECT * from book WHERE name='$name' AND author='$author'");
 $rows=mysqli_num_rows($res);
 if($rows==0)

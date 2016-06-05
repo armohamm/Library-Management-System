@@ -15,40 +15,44 @@ if (!$conn)
 $id=$_POST["id"];
 $pass=$_POST["password"];
 $c=mysqli_query($conn,"SELECT * from user WHERE password='$pass'");
-if(!$c)
+if(mysqli_num_rows($c)==0)
 {
-	echo "Error Encountered: Wrong password";
+	$_SESSION["wrong"]=1;
+	header("Location: borrow.php");
 	exit();
 }
 $res=mysqli_query($conn,"SELECT * from book WHERE id='$id'");
-if(!$res)
+if(mysqli_num_rows($res)==0)
 {
-	echo"Error Encountered: Wrong Id";
+	$_SESSION["wrong"]=1;
+	header("Location: borrow.php");
 	exit();
 }
 while($row=mysqli_fetch_assoc($res))
 $onstack=$row['stack'];
 if($onstack==0)
 {
-	echo "Error Encountered: No copies available on the stack";
+	$_SESSION["nocop"]=1;
+	header("Location: borrow.php");
 	exit();
 }
 $onstack-=1;
 $res=mysqli_query($conn,"UPDATE book SET stack='$onstack' WHERE id='$id'");
 if(!$res)
-	exit("Error Encountered: Wrong Id");
+	exit("Error Encountered: Connection Problems");
 $row=mysqli_fetch_assoc($c);
 $iss=$row['books_issued'];
 $iss++;
 if($iss>4)
 {
-	echo "Error Encountered: You cannot issue more than 4 books!";
+	$_SESSION["four"]=1;
+	header("Location: borrow.php");
 	exit();
 }
 $res2=mysqli_query($conn,"UPDATE user SET books_issued='$iss' WHERE password='$pass'");
 if(!$res2)
-	exit("Error Encountered: Wrong password");
-echo "Success";
-echo "<br><a href=\"user_menu.php\">Go back to the menu!</a>";
-echo '</html>';
+	exit("Error Encountered: Connection Problems");
+$_SESSION["succ"]=1;
+header("Location: borrow.php");
+exit();
 ?>
