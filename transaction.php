@@ -46,6 +46,7 @@ if($res==0)
 				<th>User Name</th>
 				<th>Book Id</th>
 				<th>Book Name</th>
+				<th>Action</th>
 			</tr>
 			<?php
 			     $sql="SELECT * from transaction where user_id='$uid'";
@@ -60,6 +61,7 @@ if($res==0)
 			        	$b=mysqli_fetch_assoc(mysqli_query($conn,"select * from book where id='$bid'"));
 			        	$bname=$b['name'];
 			        	echo "<td>".$bname."</td>";
+			        	echo '<td><a href="return.php?id='.$bid.'">Return</a></td>';
 			        	echo "</tr>";
 			        }
 			     ?>

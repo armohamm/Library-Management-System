@@ -45,7 +45,7 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
      unset($_SESSION["nobooks"]);
      if(isset($_SESSION["nobook"]))
           echo '<script>alert("You have not borrowed any books!")</script>';
-     unset($_SESSION["nobooks"]);
+     unset($_SESSION["nobook"]);
      ?>
      </body>
      </html>

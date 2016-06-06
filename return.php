@@ -33,11 +33,16 @@ if($res==0)
    	  	Book Id:
    	  	<select name='ids' class='select'>
           <?php
+          if(isset($_GET["id"]))
+            echo '<option value="'.$_GET["id"].'">'.$_GET["id"].'</option>';
+          else
+          {
           $query=mysqli_query($conn,"select * from transaction where user_id='$uid'");
           while($r=mysqli_fetch_assoc($query))
           {
             echo '<option value="'.$r['book_id'].'">'.$r['book_id'].'</option>';
           }
+        }
           ?>
         </select>
         <div id='a' style="margin-top:20px">
