@@ -35,10 +35,16 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
      </div><div class='a'>
           <a href="stat.php">Click Here to view your profile</a>
      </div>
+     <div class='a'>
+          <a href="transaction.php">Click Here to view your borrowed books!</a>
      </div>
-     <?php 
+     </div>
+     <?php
      if(isset($_SESSION["nobooks"]))
           echo '<script>alert("You have no books to return")</script>';
+     unset($_SESSION["nobooks"]);
+     if(isset($_SESSION["nobook"]))
+          echo '<script>alert("You have not borrowed any books!")</script>';
      unset($_SESSION["nobooks"]);
      ?>
      </body>

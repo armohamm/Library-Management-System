@@ -40,6 +40,9 @@ if(!(isset($_SESSION["authuser"])))
       </div><div class="a">
  			<a href="view_user.php">Click Here to see the current members of the library!</a>
     </div>
+    <div class="a">
+      <a href="transaction1.php">Click Here to see the transaction table!</a>
+    </div>
  					</p>
         <p>
      </div>

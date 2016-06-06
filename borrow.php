@@ -17,7 +17,7 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
    	  <form method="post" action="borrow1.php">
         <div id='a' style="margin-bottom:20px">
    	  	Book Id:
-   	  	<input type="number" name="id"><br>
+   	  	<input type="number" <?php if(isset($_GET['id'])) echo 'value="'.$_GET['id'].'"';?> name="id"><br>
       </div><div id='b' style="margin-left:10px">
         Your Password:
         <input type="password" name="password">
