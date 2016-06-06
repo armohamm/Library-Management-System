@@ -25,6 +25,8 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
       </div>
    	  </form>
       <?php
+      if(isset($_SESSION["already"]))
+        echo '<script>alert("You cannot issue more than 1 copy of the same book!")</script>';
       if(isset($_SESSION["succ"]))
         echo '<script>alert("Success!")</script>';
       if(isset($_SESSION["wrong"]))
@@ -33,6 +35,7 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
         echo '<script>alert("No copies of this book available on the stack")</script>';
        if(isset($_SESSION["four"]))
         echo '<script>alert("You cannot issue more than 4 books!")</script>';
+      unset($_SESSION["already"]);
       unset($_SESSION["succ"]);
       unset($_SESSION["wrong"]);
       unset($_SESSION["nocop"]);

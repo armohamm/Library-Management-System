@@ -21,6 +21,8 @@ if(mysqli_num_rows($c)==0)
 	header("Location: borrow.php");
 	exit();
 }
+$row=mysqli_fetch_assoc($c);
+$uid=$row['id'];
 $res=mysqli_query($conn,"SELECT * from book WHERE id='$id'");
 if(mysqli_num_rows($res)==0)
 {
@@ -28,8 +30,15 @@ if(mysqli_num_rows($res)==0)
 	header("Location: borrow.php");
 	exit();
 }
-while($row=mysqli_fetch_assoc($res))
-$onstack=$row['stack'];
+$res2=(mysqli_query($conn,"SELECT * from transaction WHERE book_id='$id' AND user_id='$uid'"));
+if(mysqli_num_rows($res2)==1)
+{
+	$_SESSION["already"]=1;
+	header("Location: borrow.php");
+	exit();
+}
+while($row2=mysqli_fetch_assoc($res))
+$onstack=$row2['stack'];
 if($onstack==0)
 {
 	$_SESSION["nocop"]=1;
@@ -40,18 +49,18 @@ $onstack-=1;
 $res=mysqli_query($conn,"UPDATE book SET stack='$onstack' WHERE id='$id'");
 if(!$res)
 	exit("Error Encountered: Connection Problems");
-$row=mysqli_fetch_assoc($c);
 $iss=$row['books_issued'];
-$iss++;
+$iss+=1;
 if($iss>4)
 {
 	$_SESSION["four"]=1;
 	header("Location: borrow.php");
 	exit();
 }
-$res2=mysqli_query($conn,"UPDATE user SET books_issued='$iss' WHERE password='$pass'");
+$res2=mysqli_query($conn,"UPDATE user SET books_issued='$iss' WHERE id='$uid'");
 if(!$res2)
 	exit("Error Encountered: Connection Problems");
+$res=mysqli_query($conn,"INSERT into transaction VALUES('$uid','$id')");
 $_SESSION["succ"]=1;
 header("Location: borrow.php");
 exit();
