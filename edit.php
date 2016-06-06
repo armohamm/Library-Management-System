@@ -71,6 +71,9 @@ if (!$conn)
 		 			 </form>
 		<p>
 			<?php
+			if(isset($_SESSION["empty"]))
+				echo '<script>alert("One or more empty fields!")</script>';
+			unset($_SESSION["empty"]);
 			if(isset($_SESSION["zerocop"]))
 				echo '<script>alert("Copies cannot be less than zero!")</script>';
 			unset($_SESSION["zerocop"]);

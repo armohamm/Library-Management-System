@@ -19,6 +19,12 @@ $id=$_GET['id'];
 $name=$_POST["name"];
 $author=$_POST["author"];
 $cop=$_POST["copies"];
+if(empty($name) || empty($author) || empty($cop))
+{
+ $_SESSION["empty"]=1;
+  header("Location: edit.php");
+  exit();
+}
 $res=mysqli_fetch_assoc(mysqli_query($conn,"SELECT * from book WHERE id='$id'"));
 $prevcop=$res['no_of_copies'];
 $stack=$res['stack'];
