@@ -3,7 +3,7 @@ session_start();
 include 'header.php';
 ?>
 <div class='cover'></div>
-<body style="text-align:center">
+<body>
 		<h3>About us</h3>
 		<p>
 		 (text)
