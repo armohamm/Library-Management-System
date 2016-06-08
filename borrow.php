@@ -10,20 +10,17 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
 ?>
    <head>
    	<h2 style="text-align:center">Borrow a book from the library</h2>
+    <link rel="stylesheet" type="text/css" href="login.css">
    </head>
    <body>
     <div class='cover'></div>
-    <div id="form" style="text-align:center"> 
+    <div class='loginBox'>
    	  <form method="post" action="borrow1.php">
-        <div id='a' style="margin-bottom:20px">
-   	  	Book Id:
-   	  	<input type="number" <?php if(isset($_GET['id'])) echo 'value="'.$_GET['id'].'"';?> name="id"><br>
-      </div><div id='b' style="margin-left:10px">
-        Your Password:
-        <input type="password" name="password">
-        <input type="submit">
-      </div>
+   	  	<input type="number" <?php if(isset($_GET['id'])) echo 'value="'.$_GET['id'].'"'; else echo 'placeholder="book id"';?> name="id"><br>
+        <input type="password" placeholder="password" name="password">
+        <input type="submit" name="submit">
    	  </form>
+    </div>
       <?php
       if(isset($_SESSION["already"]))
         echo '<script>alert("You cannot issue more than 1 copy of the same book!")</script>';

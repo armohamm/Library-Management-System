@@ -56,7 +56,7 @@ if(!$res)
 	exit();
 }
 $res=mysqli_query($conn,"DELETE from transaction WHERE book_id='$id' AND user_id='$uid'");
-$_SESSION["succe"]=1;
+$_SESSION["succed"]=1;
 header("Location: return.php");
 echo '</html>';
 exit();

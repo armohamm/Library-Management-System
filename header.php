@@ -7,12 +7,11 @@ session_start();
 .container{
 	margin-right: auto;
     margin-left: auto;
-    width: 970px;
+    width: 850px;
     margin-top: -8px;
     height: 100px;
 }
 .logo-container{
-	width:25%;
 	background-color: #ffa100;
 	display: inline-block;
 }
@@ -34,6 +33,8 @@ session_start();
     font-family: 'Roboto',sans-serif;
 }
 .nav-elements > a {
+	-webkit-transition-duration:0.8s;
+transition-duration:0.8s;
     display: inline-block;
     text-decoration: none;
     padding: 0 16px;
@@ -55,8 +56,8 @@ session_start();
     color: #ffffff;
     }
 .right-header{
-	height: 100px;
-	width: 56%;
+	height: 94px;
+	width: 48.11%;
     display: inline-block;
     position: absolute;
 }
@@ -73,11 +74,12 @@ session_start();
 	text-decoration: none;
 	text-align: right;
 	background-color: #ffa100;
-    position: relative;
     width: 100%;
     height: 35px;
 }
 .top-strip a{
+-webkit-transition-duration:0.4s;
+transition-duration:0.4s;
 color: #fff;
 }
 .top-strip a:hover{
@@ -117,14 +119,21 @@ background-color: black;
 <i class="fa fa-twitter" ></i></a>
 </div>
 <div class="icons">
-	<a href="https://www.google.com">
+	<a href="https://www.plus.google.com">
 <i class="fa fa-google-plus"></i></a>
 </div>
 	</div>
 	<div class="navigation">
-		<div class="home nav-elements">
-			<a href="index.php" style="width:100%;height:100%;">Home</a>
-		</div>
+		<?php
+		if(isset($_SESSION["authuser"]) || isset($_SESSION["user"]))
+			echo '<div class="contact nav-elements">
+			<a href="logout.php" style="width:100%;height:100%;">Logout</a>
+		</div>';
+		else
+			echo '<div class="contact nav-elements">
+			<a href="logout.php" style="width:100%;height:100%;">Home</a>
+		</div>';
+		?>
 		<div class="about nav-elements">
 			<a href="about.php" style="width:100%;height:100%;">About</a>
 		</div>
@@ -137,12 +146,6 @@ background-color: black;
 		<div class="contact nav-elements">
 			<a href="index.php" style="width:100%;height:100%;">Authors</a>
 		</div>
-		<?php
-		if(isset($_SESSION["authuser"]) || isset($_SESSION["user"]))
-			echo '<div class="contact nav-elements">
-			<a href="logout.php" style="width:100%;height:100%;">Logout</a>
-		</div>';
-		?>
 	</div>
 </div>
 </div>

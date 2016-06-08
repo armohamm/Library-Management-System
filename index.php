@@ -6,117 +6,21 @@ if(isset($_SESSION["user"]) || isset($_SESSION["authuser"]))
 }
 ?>
 <style>
-.loginBox{
-    position: relative;
-    width: 30%;
-    padding: 140px 10px 10px 140px;
-    z-index: 2;
-    font-family: 'Exo', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: #fff;
-    margin: 0 auto;
-}
-
-.loginBox input[type=text]{
-	width: 330px;
-	height: 40px;
-	background: transparent;
-	border: 1px solid rgba(255,255,255,0.6);
-	border-radius: 2px;
-	color: #fff;
-	font-family: 'Exo', sans-serif;
-	font-size: 22px;
-	font-weight: 400;
-	padding: 4px;
-}
-.loginBox input[type=password]{
-	width: 330px;
-	height: 40px;
-	background: transparent;
-	border: 1px solid rgba(255,255,255,0.6);
-	border-radius: 2px;
-	color: #fff;
-	font-family: 'Exo', sans-serif;
-	font-size: 22px;
-	font-weight: 400;
-	padding: 4px;
-	margin-top: 10px;
-}
-
-.loginBox input[type=submit]{
-	width: 330px;
-	height: 45px;
-	background: #fff;
-	border: 1px solid #fff;
-	cursor: pointer;
-	border-radius: 2px;
-	color: #a18d6c;
-	font-family: 'Exo', sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	padding: 6px;
-	margin-top: 10px;
-}
-
-.loginBox > a {
-	width: 260px;
-	height: 35px;
-	background: #fff;
-	border: 1px solid #fff;
-	cursor: pointer;
-	border-radius: 2px;
-	color: #a18d6c;
-	font-family: 'Exo', sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	padding: 6px;
-	text-decoration: none;
-	margin-top: 10px;
-}
-
-.loginBox > a:hover{
-	opacity: 0.8;
-}
-
-.loginBox input[type=submit]:hover{
-	opacity: 0.8;
-}
-
-.loginBox input[type=submit]:active{
-	opacity: 0.6;
-}
-
-.loginBox input[type=text]:focus{
-	outline: none;
-	border: 1px solid rgba(255,255,255,0.9);
-}
-
-.loginBox input[type=password]:focus{
-	outline: none;
-	border: 1px solid rgba(255,255,255,0.9);
-}
-
-.loginBox input[type=submit]:focus{
-	outline: none;
-}
-
-::-webkit-input-placeholder{
-   color: rgba(255,255,255,0.8);
-}
-
-::-moz-input-placeholder{
-   color: rgba(255,255,255,0.8);
-}
 .grid-container{
 	padding-top: 150px;
 	text-align: center;
 	font-family: 'Raleway';
 	font-size: 32px;
-	background-color: #ffffff;
+	background-color: #f1f1f1;
 }
 .grid{
        width: 100%;
+}
+@media(min-width: 700px) and (max-width: 1300px)
+{
+    .col{
+    	width: 30%;
+    }
 }
 .col{
 	display: inline-block;
@@ -134,7 +38,8 @@ hr{
 	padding-top: 20px;
 }
 </style>
-<head></head>
+<head>
+<link rel="stylesheet" type="text/css" href="login.css"></head>
 <body>
 	<div class='wrapper'>
 		<div class='cover'></div>

@@ -24,13 +24,31 @@ if($res==0)
 }
 ?>
    <head>
+    <link rel="stylesheet" type="text/css" href="login.css">
    	<h2 style="text-align:center">Return a book to the library</h2>
    </head>
+   <style type="text/css">
+   .select{
+  width: 330px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  padding: 4px;
+   }
+   .select:focus{
+    outline: none;
+  border: 1px solid rgba(255,255,255,0.9);
+   }
+   </style>
    <body>
     <div class='cover'></div>
-    <div id='form' style="text-align:center">
+    <div class='loginBox'>
    	  <form method="post" action="return1.php">
-   	  	Book Id:
    	  	<select name='ids' class='select'>
           <?php
           if(isset($_GET["id"]))
@@ -45,11 +63,8 @@ if($res==0)
         }
           ?>
         </select>
-        <div id='a' style="margin-top:20px">
-        Your Password:
-        <input type="password" name="password">
+        <input type="password" placeholder="password" name="password">
         <input type="submit">
-      </div>
    	  </form>
     </div>
     <?php
@@ -57,13 +72,13 @@ if($res==0)
       echo '<script>alert("All copies of this book are already on the stack!")</script>';
     if(isset($_SESSION["notiss"]))
       echo '<script>alert("You have not issued this book!")</script>';
-    if(isset($_SESSION["succe"]))
+    if(isset($_SESSION["succed"]))
       echo '<script>alert("Success!")</script>';
     if(isset($_SESSION["wrong"]))
       echo '<script>alert("Wrong Id or Password!")</script>';
     unset($_SESSION["wrong"]);
     unset($_SESSION["notiss"]);
-    unset($_SESSION["succe"]);
+    unset($_SESSION["succed"]);
     unset($_SESSION["cop"]);?>
     <div id='link' style="text-align:center">
       <a href="user_menu.php">Go back!</a>

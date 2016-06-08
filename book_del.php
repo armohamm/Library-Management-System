@@ -16,53 +16,52 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
   include 'header.php';
  ?>
  <style type="text/css">
-#form {
-
-	font-size: inherit;
-	text-align: center;
-
-
+.select{
+  width: 330px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  padding: 4px;
+   }
+   .select:focus{
+    outline: none;
+  border: 1px solid rgba(255,255,255,0.9);
+   }
+.backg{
+	background-color: #d39686;
+	color: #fff;
 }
-
-.book{
-text-align: center;
-width: 5%;
-height: 25px;
-
-}
-#select-id{
-display: block;
-
-
 
 }
  </style>
 	<head>
+		<link rel="stylesheet" type="text/css" href="login.css">
 		<h3 style="text-align:center"> Delete a book!</h3>
 	</head>
 	<body>
 		<div class='cover'></div>
+		<div class='loginBox'>
 		 <form method="post" action="book_del1.php" id="form" >
-		 	<div id ="select-id">
-		 	Book ID:
-		 	<select name="ids" class ="book">
+		 	<select name="ids" class='select'>
 		 		<?php
 		 		   $res=mysqli_query($conn,"SELECT * from book");
                     while($row=mysqli_fetch_assoc($res))
                      {
                      	$id=$row['id'];
-                     	echo '<option value="'.$id.'">'.$id.'</option>';
+                     	echo '<option class="backg" value="'.$id.'">'.$id.'</option>';
                      }
 		 		  ?>
 		 	</select>
-		 		</div>
-		 	<br>
-		 	<div>
-		 	No. of copies:
-		 	<input type="number" name="copies" style="display: inline">
-		 	<input type="submit" style="display: inline">
-		 	</div>
+		 		
+		 	<input type="number" placeholder="no. of copies" name="copies">
+		 	<input type="submit">
 		 			 </form>
+		 			</div>
 	</body>
 	<?php
 	  if(isset($_SESSION["success"]))
