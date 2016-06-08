@@ -25,6 +25,7 @@ if($res==0)
 ?>
    <head>
     <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" type="text/css" href="goback.css">
    	<h2 style="text-align:center">Return a book to the library</h2>
    </head>
    <style type="text/css">
@@ -80,7 +81,7 @@ if($res==0)
     unset($_SESSION["notiss"]);
     unset($_SESSION["succed"]);
     unset($_SESSION["cop"]);?>
-    <div id='link' style="text-align:center">
+    <div class='goBack'>
       <a href="user_menu.php">Go back!</a>
     </div>
    </body>

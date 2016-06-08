@@ -19,57 +19,27 @@ if (!$conn)
 }
  ?>
 	<head>
+		<link rel="stylesheet" type="text/css" href="login.css">
+		<link rel="stylesheet" type="text/css" href="goback.css">
 		<h3 style="text-align:center">Edit a book!</h3>
 	</head>
 	<style type="text/css">
-	#f{
-		text-align: center;
-	    margin-bottom: 10px;
-	}
-	#g{
-		text-align: center;
-		margin-bottom: 10px;
-	}
-	#h{
-		text-align: center;
-		margin-bottom: 10px;
-	}
-	#b{
-		text-align: center;
-	}
-	#r{
-		text-align: center;
-		margin-bottom: 10px;
-	}
 	</style>
 	<body>
 		<div class='cover'></div>
+		<div class='loginBox'>
 		 <form method="post" action="edit1.php?id=<?php echo $_GET['id'];?>">
-		 	<div id=r>
-		 	Book Id :
+		 	Book Id:
 		  <?php 
 		  echo $_GET['id'];$id=$_GET['id'];
 		 $row=mysqli_fetch_assoc(mysqli_query($conn,"select * from book where id='$id'"));
-		 	?>
-		 </div>
-		 	<div id="f">
-		 	Book name:
-		 	<input type="text" name="name" value="<?php echo $row['name'];?>"><br>
-		 </div>
-		 <div id="g">
-		 	Book author:
-		 	<input type="text" name="author" value="<?php echo $row['author'];?>">
-		 	<br>
-		 </div>
-		 <div id="h">
-		 	No. of copies:
-		 	<input type="number" name="copies" value="<?php echo $row['no_of_copies'];?>"><br>
-		 </div>
-		 <div id="b">
-		 <input type="submit">
-		</div>
+		 	?><br>
+		 	<input type="text"  placeholder="book name"name="name" value="<?php echo $row['name'];?>">
+		 	<input type="text" placeholder="author" name="author" value="<?php echo $row['author'];?>">
+		 	<input type="number" placeholder="no. of copies" name="copies" value="<?php echo $row['no_of_copies'];?>"><br>
+		    <input type="submit">
 		 			 </form>
-		<p>
+		 			</div>
 			<?php
 			if(isset($_SESSION["empty"]))
 				echo '<script>alert("One or more empty fields!")</script>';
@@ -82,7 +52,7 @@ if (!$conn)
 			unset($_SESSION["succ"]);
 			?>
 		</p>
-		<div id="b">
+		<div class='goBack'>
           <a href="book_view.php">Go back!</a>
       </div>
 	</body>

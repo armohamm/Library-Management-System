@@ -12,24 +12,19 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 	      die("Connection Error: ").mysqli_connect_error();
 ?>
 <style type="text/css">
-#tab{
-  text-align: center;
-  margin-left: 450px;
-  margin-bottom: 20px;
-  margin-right: 410px;
-  background-color: rgba(255,255,255,.6);
-}
 #link{
   text-align: center;
 }
 </style>
 <head>
+  <link rel="stylesheet" type="text/css" href="table.css">
+  <link rel="stylesheet" type="text/css" href="goback.css">
 	<h3 style="text-align:center">View Your Profile!</h3>
 </head>
 <body>
   <div class='cover'></div>
-  <div id='tab'>
-      <table border=1 style="width: 50%">
+  <div class='tbl-header'>
+      <table cellpadding="0" cellspacing="0" border="0">
       	<tr>
       		    <th>User Id</th>
 				<th>User Name</th>
@@ -37,6 +32,10 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 				<th>Password</th>
 				<th>Books Issued</th>
       	</tr>
+      </table>
+    </div>
+    <div class='tbl-content'>
+      <table cellpadding="0" cellspacing="0" border="0">
         <tr>
         	<?php
         	$us=$_SESSION["username"];
@@ -51,7 +50,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 			?>
         </tr>
     </table>
-  </div><div id='link'>
+  </div><div class='goBack'>
      <a href="user_menu.php">Go back to the menu!</a>
    </div>
 </body>

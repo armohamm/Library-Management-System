@@ -41,6 +41,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
  </style>
 	<head>
 		<link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" type="text/css" href="goback.css">
 		<h3 style="text-align:center"> Delete a book!</h3>
 	</head>
 	<body>
@@ -72,7 +73,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 	  unset($_SESSION["zerocop"]);
 	  ?>
 	  <p>
-	  	<div id='form'>
+	  	<div class='goBack'>
            <a href="book_menu.php">Go Back</a>
        </div>
 </html>

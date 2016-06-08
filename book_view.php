@@ -12,27 +12,16 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 	      die("Connection Error: ").mysqli_connect_error();
 	  ?>
 	<head>
+		<link rel="stylesheet" type="text/css" href="table.css">
+		<link rel="stylesheet" type="text/css" href="goback.css">
 		<h3 style="text-align:center"> View the books!</h3>
 	</head>
 	<style type="text/css">
-	#tab{
-		text-align: center;
-		margin-left: 300px;
-		margin-right: 350px;
-		background-color: rgba(255,255,255,.7);
-	}
-	#a{
-		text-align: center;
-		margin-top: 20px;
-	}
-	.edits{
-		text-align: center;
-	}
 	</style>
 	<body>
 		<div class='cover'></div>
-		<div id="tab">
-		<table border=1>
+		<div class='tbl-header'>
+		<table cellpadding="0" cellspacing="0" border="0">
 			<tr>
 				<th>Book Id</th>
 				<th>Book Name</th>
@@ -41,6 +30,10 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 				<th>Currently in Stock</th>
 				<th>Action</th>
 			</tr>
+		</table>
+	</div>
+	<div class='tbl-content'>
+		<table cellpadding="0" cellspacing="0" border="0">
 			<?php
 
 			     $sql="SELECT * from book";
@@ -62,7 +55,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 			     ?>
 			 </table>
 	</div>
-	<div id="a">
+	<div class='goBack'>
 		<?php
 		echo '<a href="book_menu.php">Go back to the menu</a>';
 		?>

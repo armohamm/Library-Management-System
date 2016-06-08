@@ -11,6 +11,7 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
    <head>
    	<h2 style="text-align:center">Borrow a book from the library</h2>
     <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" type="text/css" href="goback.css">
    </head>
    <body>
     <div class='cover'></div>
@@ -38,7 +39,7 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
       unset($_SESSION["nocop"]);
       unset($_SESSION["four"]);
       ?>
-    </div><div id='link' style="text-align:center">
+    </div><div class='goBack'>
     <a href="user_menu.php">Go back!</a></div>
    </body>
    </html>

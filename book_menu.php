@@ -16,35 +16,53 @@ if(!(isset($_SESSION["authuser"])))
  		<h2 style="text-align:center"> Menu for the Librarian!</h2>
  	</head>
   <style type="text/css">
-  .a{
-    text-align: center;
-    margin-bottom: 10px;
+  .menu-item{
+    display: inline-block;  
+    text-decoration: none;
+    margin-right: 64px;
   }
-  .form{      
-    background-color: rgba(255,255,255,.7);
-    margin-left: 450px;
-    margin-right: 450px;
-
+    .menu-item a{
+      border-radius: 50%;
+    padding:60px;
+      width: 100px;
+      height: 100px;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: #ffa100;
+  }
+  .menu-item a:hover{
+    background-color: #ffa100;
+    color: #f1f1f1;
+  }
+  .container1{
+    margin: 0 auto;
+    width: 69%;
+    height: 220px;
+  }
+  .container2{
+    margin: 0 auto;
+    width: 46%;
+    height: 220px;
   }
     </style>
  	<body>
     <div class='cover'></div>
-    <div class='form'>
- 		<p>
-      <div class="a">
- 			<a href="book_add.php">Click Here to add a book!</a><br>
-      </div><div class="a">
- 			<a href="book_view.php">Click Here to view the books!</a><br>
-      </div><div class="a">
- 			<a href="book_del.php">Click Here to delete a book!</a><br>
-      </div><div class="a">
- 			<a href="view_user.php">Click Here to see the current members of the library!</a>
+    <div class='container1'>
+      <div class="menu-item">
+ 			<a href="book_add.php"><i class="fa fa-plus" style="font-size:112px"></i></a>
+      </div><div class="menu-item">
+ 			<a href="book_view.php"><i class="fa fa-book" style="font-size:112px"></i></a>
+      </div><div class="menu-item">
+ 			<a href="book_del.php"><i class="fa fa-minus" style="font-size:112px"></i></a>
+      </div></div><div class='container2'><div class="menu-item">
+ 			<a href="view_user.php"><i class="fa fa-user" style="font-size:112px"></i></a>
     </div>
-    <div class="a">
-      <a href="transaction1.php">Click Here to see the transaction table!</a>
+    <div class="menu-item">
+      <a href="transaction1.php"><i class="fa fa-list" style="font-size:112px"></i></a>
     </div>
- 					</p>
-        <p>
      </div>
     </p>
  	</body>

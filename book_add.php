@@ -16,6 +16,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 		<h3 style="text-align:center">
 				Add a book!</h3>
 		<link rel="stylesheet" type="text/css" href="login.css">
+		<link rel="stylesheet" type="text/css" href="goback.css">
 	</head>
 	<style type="text/css">
 	#b{
@@ -42,7 +43,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 			unset($_SESSION["success"]);
 			?>
 		</p>
-		<div id="b">
+		<div class='goBack'>
           <a href="book_menu.php">Go back!</a>
       </div>
 	</body>

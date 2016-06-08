@@ -12,11 +12,37 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
      text-align: center;
      margin-bottom: 10px;
 }
-.box{
-     background-color: rgba(255,255,255,.6);
-     margin-left: 500px;
-     margin-right: 500px;
-}
+ .elem{
+    display: inline-block;  
+    text-decoration: none;
+    margin-right: 64px;
+  }
+    .elem a{
+      border-radius: 50%;
+    padding:60px;
+      width: 100px;
+      height: 100px;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: #ffa100;
+  }
+  .elem a:hover{
+    background-color: #ffa100;
+    color: #f1f1f1;
+  }
+  .container1-umen{
+    margin: 0 auto;
+    width: 70%;
+    height: 220px;
+  }
+  .container2-umen{
+    margin: 0 auto;
+    width: 46%;
+    height: 220px;
+  }
 </style>
      <head>
           <div class='a'>
@@ -24,19 +50,19 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
           </div>
      	</head>
      <body>
-          <div class="box">
           <div class='cover'></div>
-          <div class='a'>
-     	<a href="borrow.php">Click Here to borrow a book</a><br>
-     </div><div class='a'>
-     	<a href="book_view.php">Click Here to see the book list</a><br>
-     </div><div class='a'>
-     	<a href="return.php">Click Here to return a book</a><br>
-     </div><div class='a'>
-          <a href="stat.php">Click Here to view your profile</a>
+          <div class='container1-umen'>
+          <div class='elem'>
+     	<a href="borrow.php"><i class='fa fa-plus' style="font-size:112px"></i></a>
+     </div><div class='elem'>
+     	<a href="book_view.php"><i class='fa fa-book' style="font-size:112px"></i></a>
+     </div><div class='elem'>
+     	<a href="return.php"><i class='fa fa-minus' style="font-size:112px"></i></a>
+     </div></div><div class='container2-umen'><div class='elem'>
+          <a href="stat.php"><i class='fa fa-user' style="font-size:112px"></i></a>
      </div>
-     <div class='a'>
-          <a href="transaction.php">Click Here to view your borrowed books!</a>
+     <div class='elem'>
+          <a href="transaction.php"><i class='fa fa-list' style="font-size:112px"></i></a>
      </div>
      </div>
      <?php

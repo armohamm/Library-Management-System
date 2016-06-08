@@ -12,30 +12,29 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 	      die("Connection Error: ").mysqli_connect_error();
 ?>
 	<head>
+		<link rel="stylesheet" type="text/css" href="table.css">
+		<link rel="stylesheet" type="text/css" href="goback.css">
 		<h3 style="text-align:center"> View the currently borrowed books!</h3>
 	</head>
 	<style type="text/css">
-	#tab{
-		text-align: center;
-		margin-left: 500px;
-		margin-bottom: 20px;
-		margin-right: 500px;
-		background-color: rgba(255,255,255,0.7);
-	}
 	#a{
 		text-align: center;
 	}
 	</style>
 	<body>
 		<div class='cover'></div>
-		<div id="tab">
-		<table border=1>
+		<div class='tbl-header'>
+		<table cellpadding="0" cellspacing="0" border="0">
 			<tr>
 				<th>User Id</th>
 				<th>User Name</th>
 				<th>Book Id</th>
 				<th>Book Name</th>
 			</tr>
+		</table>
+	</div>
+	<div class='tbl-content'>
+		<table cellpadding="0" cellspacing="0" border="0">
 			<?php
 			     $sql="SELECT * from transaction";
 			     $res=mysqli_query($conn,$sql);
@@ -56,7 +55,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 			        }
 			     ?>
 		</table>
-	</div><div id="a">
+	</div><div class='goBack'>
 		<?php
 		echo '<a href="book_menu.php">Go back to the menu</a>';
 		?>
