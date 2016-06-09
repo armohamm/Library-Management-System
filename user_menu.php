@@ -28,6 +28,8 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
     background-color: #f1f1f1;
     text-align: center;
     color: #ffa100;
+     -webkit-transition: 0.8s;
+    transition:0.8s;
   }
   .elem a:hover{
     background-color: #ffa100;
@@ -46,7 +48,7 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
 </style>
      <head>
           <div class='a'>
-     	 <h2>Menu for the User!</h2>
+     	 <h2 style="text-align:center;color:#fff">Menu for the User!</h2>
           </div>
      	</head>
      <body>

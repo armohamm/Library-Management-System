@@ -18,7 +18,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 	<head>
 		<link rel="stylesheet" type="text/css" href="table.css">
 		<link rel="stylesheet" type="text/css" href="goback.css">
-		<h3 style="text-align:center"> View the current members!</h3>
+		<h3 style="text-align:center;color:#fff"> View the current members!</h3>
 	</head>
 	<style type="text/css">
 	#a{

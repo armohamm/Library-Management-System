@@ -25,7 +25,7 @@ if($res==0)
 	<head>
 		<link rel="stylesheet" type="text/css" href="table.css">
 		<link rel="stylesheet" type="text/css" href="goback.css">
-		<h3 style="text-align:center"> View the currently borrowed books!</h3>
+		<h3 style="text-align:center;color:#fff"> View the currently borrowed books!</h3>
 	</head>
 	<style type="text/css">
 	#a{

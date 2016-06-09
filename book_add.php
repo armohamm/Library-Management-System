@@ -13,7 +13,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
   include 'header.php';
  ?>
 	<head>
-		<h3 style="text-align:center">
+		<h3 style="text-align:center;color:#fff">
 				Add a book!</h3>
 		<link rel="stylesheet" type="text/css" href="login.css">
 		<link rel="stylesheet" type="text/css" href="goback.css">

@@ -42,7 +42,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 	<head>
 		<link rel="stylesheet" type="text/css" href="login.css">
     <link rel="stylesheet" type="text/css" href="goback.css">
-		<h3 style="text-align:center"> Delete a book!</h3>
+		<h3 style="text-align:center;color:#fff"> Delete a book!</h3>
 	</head>
 	<body>
 		<div class='cover'></div>

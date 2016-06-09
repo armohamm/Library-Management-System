@@ -8,35 +8,21 @@ if(isset($_SESSION["user"]) || isset($_SESSION["authuser"]))
 include 'header.php';
 ?>
 <style type="text/css">
-.a{
-  text-align: center;
-  margin-bottom: 20px;
-  margin-right: 20px;
-}
-body{
-  background-size: cover;
-}
 </style>
 <head>
-	<h2><div class="a">Register with us now!</div></h2>
+  <link rel="stylesheet" type="text/css" href="login.css">
+	<h2 style="text-align:center;color:#fff">Register with us now!</h2>
 </head>
 <body>
   <div class='cover'></div>
-    <form method="post" action="register.php">
-      <div class="a">
-           Name:
-           <input type="text" name="name"><br>
-         </div>
-         <div class="a">
-           Email:
-           <input type="email" name="email"><br>
-         </div><div class="a">
-           Password:
-           <input type="password" name="password"><br>
-         </div><div class="a">
-           <input type="submit"><br>
-         </div>
-    </form>
+  <div class='loginBox'>
+        <form method="post" action="register.php">
+           <input type="text" placeholder="name" name="name">
+           <input type="text" placeholder="email" name="email">
+           <input type="password" placeholder="password" name="password">
+           <input type="submit">
+          </form>
+        </div>
     <?php
     if(isset($_SESSION["emptyfields"]))
       echo '<script>alert("Empty Fields")</script>';

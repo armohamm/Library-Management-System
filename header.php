@@ -7,7 +7,7 @@ session_start();
 .container{
 	margin-right: auto;
     margin-left: auto;
-    width: 850px;
+    width: 100%;
     margin-top: -8px;
     height: 100px;
 }
@@ -22,6 +22,7 @@ session_start();
     width: 15%;
 }
 .navigation{
+	text-align: right;
 	width: 100%;
 	background-color: #ffffff;
 	height: 59px;
@@ -47,7 +48,7 @@ transition-duration:0.8s;
 .nav-elements > a:hover{
     display: inline-block;
     text-decoration: none;
-    padding: 0 16px;
+    padding: 0 12px;
     line-height: 59px;
     text-align: center;
     min-width: 60px;
@@ -57,7 +58,7 @@ transition-duration:0.8s;
     }
 .right-header{
 	height: 94px;
-	width: 48.11%;
+	width:80%;
     display: inline-block;
     position: absolute;
 }
@@ -129,22 +130,26 @@ background-color: black;
 			echo '<div class="contact nav-elements">
 			<a href="logout.php" style="width:100%;height:100%;">Logout</a>
 		</div>';
+		else if($_SERVER['PHP_SELF']!="/library/register1.php")
+			echo '<div class="contact nav-elements">
+			<a href="register1.php" style="height:100%;">Register</a>
+		</div>';
 		else
 			echo '<div class="contact nav-elements">
-			<a href="logout.php" style="width:100%;height:100%;">Home</a>
+			<a href="index.php" style="height:100%;">Home</a>
 		</div>';
 		?>
 		<div class="about nav-elements">
-			<a href="about.php" style="width:100%;height:100%;">About</a>
+			<a href="about.php" style="height:100%;">About</a>
 		</div>
 		<div class="contact nav-elements">
-			<a href="contact.php" style="width:100%;height:100%;">contact</a>
+			<a href="contact.php" style="height:100%;">contact</a>
 		</div>
 		<div class="contact nav-elements">
-			<a href="index.php" style="width:100%;height:100%;">Our Books</a>
+			<a href="index.php" style="height:100%;">Our Books</a>
 		</div>
 		<div class="contact nav-elements">
-			<a href="index.php" style="width:100%;height:100%;">Authors</a>
+			<a href="index.php" style="height:100%;">Authors</a>
 		</div>
 	</div>
 </div>

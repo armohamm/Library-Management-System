@@ -9,7 +9,7 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
 }
 ?>
    <head>
-   	<h2 style="text-align:center">Borrow a book from the library</h2>
+   	<h2 style="text-align:center;color:#fff">Borrow a book from the library</h2>
     <link rel="stylesheet" type="text/css" href="login.css">
     <link rel="stylesheet" type="text/css" href="goback.css">
    </head>
