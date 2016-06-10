@@ -9,7 +9,9 @@ include 'header.php';
 ?>
 <style type="text/css">
 </style>
-<head>
+<head><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
   <link rel="stylesheet" type="text/css" href="login.css">
 	<h2 style="text-align:center;color:#fff">Register with us now!</h2>
 </head>

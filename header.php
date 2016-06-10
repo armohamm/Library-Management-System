@@ -12,7 +12,7 @@ session_start();
     height: 100px;
 }
 .logo-container{
-	background-color: #ffa100;
+	background-color: #F57C00;
 	display: inline-block;
 }
 .logo{
@@ -24,7 +24,7 @@ session_start();
 .navigation{
 	text-align: right;
 	width: 100%;
-	background-color: #ffffff;
+	background-color: #fff;
 	height: 59px;
 }
 .nav-elements{
@@ -43,7 +43,7 @@ transition-duration:0.8s;
     text-align: center;
     min-width: 60px;
     cursor: pointer;
-    color: #ffa100
+    color: #F57C00;
     }
 .nav-elements > a:hover{
     display: inline-block;
@@ -53,8 +53,8 @@ transition-duration:0.8s;
     text-align: center;
     min-width: 60px;
     cursor: pointer;
-    background-color: #ffa100;
-    color: #ffffff;
+    background-color: #F57C00;
+    color: #fff;
     }
 .right-header{
 	height: 94px;
@@ -65,7 +65,7 @@ transition-duration:0.8s;
 .cover{
 	background-image: url("background.jpg");
 	background-size: cover;
-	position: absolute;top: 0; left: 0;width: 100%;height: 100%;
+	position: absolute;top: 0; left: 0;width: 100%;height: 687px;
 	z-index: -1;
 	-webkit-filter:blur(7px);
 	filter:blur(7px);
@@ -74,7 +74,7 @@ transition-duration:0.8s;
 	display: inline-block;
 	text-decoration: none;
 	text-align: right;
-	background-color: #ffa100;
+	background-color: #F57C00;
     width: 100%;
     height: 35px;
 }
@@ -97,6 +97,31 @@ background-color: black;
 }
 @import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+#menu {
+  display:none;
+}
+
+#mob-menu{
+	display: none;
+}
+@media(min-width: 300px) and (max-width: 1300px){
+	/* #menu is the original menu */
+    
+	.top-strip{
+		display: none;
+	}
+	.right-header{
+		width: 28%;
+	}
+	.navigation {
+		display:none;
+	}
+	
+	#mob-menu {
+		display:block;
+	}
+}
 </style>
 <header>
 	<div class="container">
@@ -128,7 +153,7 @@ background-color: black;
 		<?php
 		if(isset($_SESSION["authuser"]) || isset($_SESSION["user"]))
 			echo '<div class="contact nav-elements">
-			<a href="logout.php" style="width:100%;height:100%;">Logout</a>
+			<a href="logout.php" style="height:100%;">Logout</a>
 		</div>';
 		else if($_SERVER['PHP_SELF']!="/library/register1.php")
 			echo '<div class="contact nav-elements">
@@ -152,6 +177,31 @@ background-color: black;
 			<a href="index.php" style="height:100%;">Authors</a>
 		</div>
 	</div>
+	<div id='mob-menu'>
+		<ul id="menu">
+			<?php 
+			if(isset($_SESSION["authuser"]) || isset($_SESSION["user"]))
+				echo '<li><a href="logout.php">Logout</a></li>';
+			else if($_SERVER['PHP_SELF']!="/library/register1.php")
+				echo '<li><a href="register1.php">Register</a></li>';
+			else
+				echo '<li><a href="index.php">Home</a></li>';
+			?>
+			<li><a href="about.php">About Us</a></li>
+			<li><a href="contact.php">Contact Us</a></li>
+			<li><a href="index.php">Our Books</a></li>
+			<li><a href="index.php">Authors</a></li>
+	    </ul>
+	</div>
+	
+	<link rel="stylesheet" href="slicknav.css" />
+	<script src="jquery.min.js"></script>
+   <script src="jquery.slicknav.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#menu').slicknav({prependTo:'#mob-menu'});
+	});
+	</script>
 </div>
 </div>
 	</header>

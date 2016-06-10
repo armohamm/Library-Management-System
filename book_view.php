@@ -12,6 +12,9 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 	      die("Connection Error: ").mysqli_connect_error();
 	  ?>
 	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
 		<link rel="stylesheet" type="text/css" href="table.css">
 		<link rel="stylesheet" type="text/css" href="goback.css">
 		<h3 style="text-align:center;color:#fff"> View the books!</h3>

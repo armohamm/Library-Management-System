@@ -13,6 +13,9 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
   include 'header.php';
  ?>
 	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
 		<h3 style="text-align:center;color:#fff">
 				Add a book!</h3>
 		<link rel="stylesheet" type="text/css" href="login.css">

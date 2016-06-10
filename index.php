@@ -16,8 +16,7 @@ if(isset($_SESSION["user"]) || isset($_SESSION["authuser"]))
 .grid{
        width: 100%;
 }
-@media(min-width: 700px) and (max-width: 1300px)
-{
+@media(min-width: 700px) and (max-width: 1300px){
     .col{
     	width: 30%;
     }
@@ -39,6 +38,9 @@ hr{
 }
 </style>
 <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
 <link rel="stylesheet" type="text/css" href="login.css"></head>
 <body>
 	<div class='wrapper'>
