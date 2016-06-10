@@ -123,4 +123,8 @@
   margin-left: 0px;
   margin-right: 0px;
 }
+@media(min-width: 1301px){
+	form{
+		margin-left: 30px;
+	}
 }

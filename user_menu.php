@@ -9,9 +9,10 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
 ?>
 <style type="text/css">
 </style>
-     <head><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="HandheldFriendly" content="true"><link rel="stylesheet" type="text/css" href="menu.css">
+     <head><link rel='shortcut icon' type='image/ico' href='favicon.ico'>
+          <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+           <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true"><link rel="stylesheet" type="text/css" href="menu.css">
           <div class='a'>
      	 <h2 style="text-align:center;color:#fff">Menu for the User!</h2>
           </div>

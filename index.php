@@ -6,6 +6,11 @@ if(isset($_SESSION["user"]) || isset($_SESSION["authuser"]))
 }
 ?>
 <style>
+@media(min-width: 1301px){
+	form{
+		margin-left: 30px;
+	}
+}
 .grid-container{
 	padding-top: 150px;
 	text-align: center;
@@ -37,7 +42,7 @@ hr{
 	padding-top: 20px;
 }
 </style>
-<head>
+<head><link rel='shortcut icon' type='image/ico' href='favicon.ico'>
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="HandheldFriendly" content="true">
@@ -49,7 +54,7 @@ hr{
 	<div class="loginBox">
      <p></p>
 	<form action = "welcome.php" method="post" >
-		<input type="text" placeholder="username" name="username">
+		<input type="text" placeholder="email" name="username">
 		<input type="password" placeholder="password" name="password"><br>
 		<input type="submit" name="submit" value="Login">
 	</form>

@@ -14,6 +14,7 @@ session_start();
 .logo-container{
 	background-color: #F57C00;
 	display: inline-block;
+	width: 245px; 
 }
 .logo{
 	padding-bottom: 20px;
@@ -132,6 +133,7 @@ background-color: black;
 	</div>
 	<div class="right-header">
 	<div class="top-strip">
+		<a href="#" style="text-decoration:none"> devansh@thelibrary.esy.es</a>
     <div class="icons">
   <a href="https://www.facebook.com">
 <i class="fa fa-facebook"></i></a>
@@ -193,7 +195,6 @@ background-color: black;
 			<li><a href="index.php">Authors</a></li>
 	    </ul>
 	</div>
-	
 	<link rel="stylesheet" href="slicknav.css" />
 	<script src="jquery.min.js"></script>
    <script src="jquery.slicknav.min.js"></script>
@@ -201,6 +202,15 @@ background-color: black;
 	$(function(){
 		$('#menu').slicknav({prependTo:'#mob-menu'});
 	});
+	$(document).ready(function(){
+			$(document).on('scroll', function(){
+				var pos=window.pageYOffset;
+				if(pos>15)	
+				$("header").css({"position":"fixed","width":"70%","margin-left":"150px","z-index":"20","transition-duration":"0.4s"});
+			     else
+			     	$("header").css({"position":"","width":"100%","margin-left":"0","z-index":"3"});
+			});
+		});
 	</script>
 </div>
 </div>

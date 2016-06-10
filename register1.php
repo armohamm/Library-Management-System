@@ -9,7 +9,7 @@ include 'header.php';
 ?>
 <style type="text/css">
 </style>
-<head><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<head><link rel='shortcut icon' type='image/ico' href='favicon.ico'><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="HandheldFriendly" content="true">
   <link rel="stylesheet" type="text/css" href="login.css">
