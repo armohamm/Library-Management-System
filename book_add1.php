@@ -1,6 +1,5 @@
 <?php
 session_start();
-include 'header.php';
 if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
   {$_SESSION["notlogged"]=1;
       header("Location: index.php");
@@ -20,8 +19,7 @@ $author=$_POST["author"];
 $cop=$_POST["copies"];
 if(empty($name) || empty($author) || empty($cop))
 {
- $_SESSION["empty"]=1;
-  header("Location: book_add.php");
+ echo "Empty Fields";
   exit();
 }
 $res=mysqli_query($conn,"SELECT * from book WHERE name='$name' AND author='$author'");
@@ -43,6 +41,5 @@ else
     	exit("Error Encountered: Connection Problem");
    
 }
- $_SESSION["success"]=1;
- header("Location: book_add.php")
+ echo "Success!";
 ?>

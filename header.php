@@ -108,7 +108,6 @@ background-color: black;
 }
 @media(min-width: 300px) and (max-width: 1300px){
 	/* #menu is the original menu */
-    
 	.top-strip{
 		display: none;
 	}
@@ -202,7 +201,7 @@ background-color: black;
 	$(function(){
 		$('#menu').slicknav({prependTo:'#mob-menu'});
 	});
-	$(document).ready(function(){
+	/*$(document).ready(function(){
 			$(document).on('scroll', function(){
 				var pos=window.pageYOffset;
 				if(pos>15)	
@@ -210,7 +209,7 @@ background-color: black;
 			     else
 			     	$("header").css({"position":"","width":"100%","margin-left":"0","z-index":"3"});
 			});
-		});
+		});*/
 	</script>
 </div>
 </div>

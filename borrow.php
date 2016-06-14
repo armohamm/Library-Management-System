@@ -17,33 +17,44 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
     <link rel="stylesheet" type="text/css" href="login.css">
     <link rel="stylesheet" type="text/css" href="goback.css">
    </head>
+   <style type="text/css">
+   #go{
+  width: 330px;
+  height: 45px;
+  background: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+  border-radius: 2px;
+  color: #a18d6c;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 6px;
+  margin-top: 10px;
+}
+#go{
+  opacity: 0.8;
+}
+
+#go:hover{
+  opacity: 0.6;
+}
+
+#go:focus{
+  outline: none;
+}</style>
    <body>
     <div class='cover'></div>
     <div class='loginBox'>
-   	  <form method="post" action="borrow1.php">
+   	  <form method="post" id="form">
    	  	<input type="number" <?php if(isset($_GET['id'])) echo 'value="'.$_GET['id'].'"'; else echo 'placeholder="book id"';?> name="id"><br>
         <input type="password" placeholder="password" name="password">
-        <input type="submit" name="submit">
+        <input type="button" value="Submit" name="button" onclick="send('borrow1.php')">
    	  </form>
     </div>
-      <?php
-      if(isset($_SESSION["already"]))
-        echo '<script>alert("You cannot issue more than 1 copy of the same book!")</script>';
-      if(isset($_SESSION["succ"]))
-        echo '<script>alert("Success!")</script>';
-      if(isset($_SESSION["wrong"]))
-        echo '<script>alert("Wrong Id or Password")</script>';
-       if(isset($_SESSION["nocop"]))
-        echo '<script>alert("No copies of this book available on the stack")</script>';
-       if(isset($_SESSION["four"]))
-        echo '<script>alert("You cannot issue more than 4 books!")</script>';
-      unset($_SESSION["already"]);
-      unset($_SESSION["succ"]);
-      unset($_SESSION["wrong"]);
-      unset($_SESSION["nocop"]);
-      unset($_SESSION["four"]);
-      ?>
     </div><div class='goBack'>
-    <a href="user_menu.php">Go back!</a></div>
+    <input type="button" id="go" value="Go Back!" onclick="back2()">
+  </div>
+  <script type="text/javascript" src="ajax.js"></script>
    </body>
    </html>

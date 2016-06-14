@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 include 'header.php';
 if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
   {
@@ -16,7 +17,6 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="HandheldFriendly" content="true">
-		<link rel="stylesheet" type="text/css" href="table.css">
 		<link rel="stylesheet" type="text/css" href="goback.css">
 		<h3 style="text-align:center;color:#fff"> View the currently borrowed books!</h3>
 	</head>
@@ -59,9 +59,10 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 			        }
 			     ?>
 		</table>
-	</div><div class='goBack'>
+	</div><div class='goBack' id="go">
 		<?php
-		echo '<a href="book_menu.php">Go back to the menu</a>';
+		echo '<input type="button" id="go" value="Go Back!" onclick="back()">';
+		ob_flush();
 		?>
 	</div>
 	</body>

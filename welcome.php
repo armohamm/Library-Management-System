@@ -1,6 +1,5 @@
 <?php
 session_start();
-include 'header.php';
 if((isset($_SESSION["user"])) || (isset($_SESSION["authuser"])))
 	{ 
           header("Location: book_menu.php");
@@ -26,8 +25,8 @@ if(!(mysqli_num_rows($result)==1))
 $_SESSION["user"]=1;
 if($username=="root@123")
 $_SESSION["authuser"]=1;
-header("Location: book_menu.php");
-echo '</html>';
+/*header("Location: book_menu.php");*/
+echo '<meta http-equiv="refresh" content="0; URL=book_menu.php">';
+exit();
 mysqli_close($conn);
 ?>
-	

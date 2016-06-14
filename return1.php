@@ -1,5 +1,5 @@
 <?php
-session_start();include 'header.php';
+session_start();
 if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
 {
 	$_SESSION["notlogged"]=1;
@@ -16,23 +16,20 @@ $pass=$_POST["password"];
 $c=mysqli_query($conn,"SELECT * from user WHERE password='$pass'");
 if(mysqli_num_rows($c)==0)
 {
-	$_SESSION["wrong"]=1;
-	header("Location: return.php");
+	echo "Wrong password";
 	exit();
 }
 $res=mysqli_query($conn,"SELECT * from book WHERE id='$id'");
 if(mysqli_num_rows($res)==0)
 {
-	$_SESSION["wrong"]=1;
-	header("Location: return.php");
+	echo "Wrong Id";
 	exit();
 }
 $r=mysqli_fetch_assoc($c);
 $uid=$r['id'];
 if(mysqli_num_rows(mysqli_query($conn,"select * from transaction where book_id='$id' and user_id='$uid'"))==0)
 {
-	$_SESSION["notiss"]=1;
-	header("Location: return.php");
+	echo "You have not issued this book";
 	exit();
 }
 while($row=mysqli_fetch_assoc($res))
@@ -40,8 +37,7 @@ while($row=mysqli_fetch_assoc($res))
 $onstack++;
 if($onstack>$cop)
 {
-	$_SESSION["cop"]=1;
-	header("Location: return.php");
+	echo "All copies of this book are already on stack";
 	exit();
 }
 $res=mysqli_query($conn,"UPDATE book SET stack='$onstack' WHERE id='$id'");
@@ -56,8 +52,6 @@ if(!$res)
 	exit();
 }
 $res=mysqli_query($conn,"DELETE from transaction WHERE book_id='$id' AND user_id='$uid'");
-$_SESSION["succed"]=1;
-header("Location: return.php");
-echo '</html>';
+echo "Success";
 exit();
 ?>

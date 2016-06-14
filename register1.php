@@ -22,7 +22,7 @@ include 'header.php';
            <input type="text" placeholder="name" name="name">
            <input type="text" placeholder="email" name="email">
            <input type="password" placeholder="password" name="password">
-           <input type="submit">
+           <input type="button">
           </form>
         </div>
     <?php

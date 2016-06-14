@@ -62,7 +62,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 		</table>
 	</div><div class='goBack'>
 		<?php
-		echo '<a href="book_menu.php">Go back to the menu</a>';
+		echo '<input type="button" id="go" value="Go Back!" onclick="back()">';
 		?>
 	</div>
 	</body>

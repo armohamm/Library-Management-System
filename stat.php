@@ -55,7 +55,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
         </tr>
     </table>
   </div><div class='goBack'>
-     <a href="user_menu.php">Go back to the menu!</a>
+     <input type="button" id="go" value="Go Back!" onclick="back()">
    </div>
 </body>
 </html>

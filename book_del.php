@@ -15,44 +15,18 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
       die("Connection failed: " . mysqli_connect_error());
   include 'header.php';
  ?>
- <style type="text/css">
-.select{
-  width: 330px;
-  height: 40px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.6);
-  border-radius: 2px;
-  color: #fff;
-  font-family: 'Exo', sans-serif;
-  font-size: 22px;
-  font-weight: 400;
-  padding: 4px;
-   }
-   .select:focus{
-    outline: none;
-  border: 1px solid rgba(255,255,255,0.9);
-   }
-.backg{
-	background-color: #d39686;
-	color: #fff;
-}
-
-}
- </style>
 	<head>
     <link rel='shortcut icon' type='image/ico' href='favicon.ico'>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="HandheldFriendly" content="true">
-		<link rel="stylesheet" type="text/css" href="login.css">
-    <link rel="stylesheet" type="text/css" href="goback.css">
 		<h3 style="text-align:center;color:#fff"> Delete a book!</h3>
 	</head>
 	<body>
 		<div class='cover'></div>
 		<div class='loginBox'>
-		 <form method="post" action="book_del1.php" id="form" >
-		 	<select name="ids" class='select'>
+		 <form method="post"  id="form" >
+		 	<select name="ids" class="select">
 		 		<?php
 		 		   $res=mysqli_query($conn,"SELECT * from book");
                     while($row=mysqli_fetch_assoc($res))
@@ -64,20 +38,12 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 		 	</select>
 		 		
 		 	<input type="number" placeholder="no. of copies" name="copies">
-		 	<input type="submit">
+		 	<input type="button" value="Submit" onclick="send('book_del1.php')">
 		 			 </form>
 		 			</div>
 	</body>
-	<?php
-	  if(isset($_SESSION["success"]))
-	  	echo '<script>alert("Success!")</script>';
-	  unset($_SESSION["success"]);
-	  if(isset($_SESSION["zerocop"]))
-	  	echo '<script>alert("Copies cannot be less than zero!")</script>';
-	  unset($_SESSION["zerocop"]);
-	  ?>
 	  <p>
 	  	<div class='goBack'>
-           <a href="book_menu.php">Go Back</a>
+           <input type="button" id="go" value="Go Back!" onclick="back()">
        </div>
 </html>

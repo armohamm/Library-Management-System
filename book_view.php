@@ -50,18 +50,16 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 			        	echo "<td>".$row['no_of_copies']."</td>";
 			        	echo "<td>".$row['stack']."</td>";
 			        	if(isset($_SESSION["authuser"]))
-			        	echo '<td><a href="edit.php?id='.$row['id'].'">Edit</a></td>';
+			        	echo '<td><a href="edit.php?id='.$row['id'].'" id="edit">Edit</a></td>';
 			            else
-			            echo '<td><a href="borrow.php?id='.$row['id'].'">Borrow</a></td>';
+			            echo '<td><a href="borrow.php?id='.$row['id'].'" id="borrow">Borrow</a></td>';
 			        	echo "</tr>";
 			        }
 			     ?>
 			 </table>
 	</div>
 	<div class='goBack'>
-		<?php
-		echo '<a href="book_menu.php">Go back to the menu</a>';
-		?>
+              <input type="button" id="go" value="Go Back!" onclick="back()">
 	</div>
 	</body>
 </html>

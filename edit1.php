@@ -1,6 +1,5 @@
 <?php
 session_start();
-include 'header.php';
 if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
   {$_SESSION["notlogged"]=1;
       header("Location: index.php");
@@ -15,14 +14,13 @@ if (!$conn)
 {
     die("Connection failed: " . mysqli_connect_error());
 }
-$id=$_GET['id'];
+$id=$_POST["id"];
 $name=$_POST["name"];
 $author=$_POST["author"];
 $cop=$_POST["copies"];
 if(empty($name) || empty($author) || empty($cop))
 {
- $_SESSION["empty"]=1;
-  header("Location: edit.php");
+ echo "Empty fields";
   exit();
 }
 $res=mysqli_fetch_assoc(mysqli_query($conn,"SELECT * from book WHERE id='$id'"));
@@ -30,8 +28,7 @@ $prevcop=$res['no_of_copies'];
 $stack=$res['stack'];
 if($cop<0)
 {
-	$_SESSION["zerocop"]=1;
-	header("Location: edit.php");
+	echo "Copies cannot be less than zero!";
 	exit();
 }
 elseif ($cop>$prevcop) 
@@ -44,7 +41,6 @@ if(!$res)
 	echo "Error Encountered: Connection Problems";
 	exit();
 }
-$_SESSION["succ"]=1;
-header("Location: edit.php");
+echo "Success!";
 exit();
 ?>

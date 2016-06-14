@@ -18,8 +18,6 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 <meta name="HandheldFriendly" content="true">
 		<h3 style="text-align:center;color:#fff">
 				Add a book!</h3>
-		<link rel="stylesheet" type="text/css" href="login.css">
-		<link rel="stylesheet" type="text/css" href="goback.css">
 	</head>
 	<style type="text/css">
 	#b{
@@ -29,25 +27,16 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
 	<body>
 		<div class='cover'></div>
 		<div class='loginBox'>
-		 <form method="post" action="book_add1.php">
+		 <form method="post" id="form">
 		 	<input type="text" placeholder="book name" name="name">
 		 	<input type="text" placeholder="author" name="author">
 		 	<input type="number" placeholder="no. of copies" name="copies">
-		    <input type="submit">
+		    <input type="button" value="Submit" onclick="send('book_add1.php')">
 			 </form>
 			</div>
 		<p>
-			<?php
-			if(isset($_SESSION["empty"]))
-				echo '<script>alert("One or more empty fields")</script>';
-			unset($_SESSION["empty"]);
-			if(isset($_SESSION["success"]))
-				echo '<script>alert("Success!")</script>';
-			unset($_SESSION["success"]);
-			?>
-		</p>
 		<div class='goBack'>
-          <a href="book_menu.php">Go back!</a>
+          <input type="button" id="go" value="Go Back!" onclick="back()">
       </div>
 	</body>
 </html>

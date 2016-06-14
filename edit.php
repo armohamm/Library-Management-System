@@ -28,36 +28,58 @@ if (!$conn)
 		<h3 style="text-align:center">Edit a book!</h3>
 	</head>
 	<style type="text/css">
+	#go{
+  width: 330px;
+  height: 45px;
+  background: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+  border-radius: 2px;
+  color: #a18d6c;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 6px;
+  margin-top: 10px;
+}
+#go{
+  opacity: 0.8;
+}
+
+#go:hover{
+  opacity: 0.6;
+}
+
+#go:focus{
+  outline: none;
+}
 	</style>
 	<body>
 		<div class='cover'></div>
 		<div class='loginBox'>
-		 <form method="post" action="edit1.php?id=<?php echo $_GET['id'];?>">
+		 <form method="post" id="form">
 		 	Book Id:
 		  <?php 
 		  echo $_GET['id'];$id=$_GET['id'];
 		 $row=mysqli_fetch_assoc(mysqli_query($conn,"select * from book where id='$id'"));
 		 	?><br>
+		 	<input type="hidden" value="<?php echo $id;?>" name="id">
 		 	<input type="text"  placeholder="book name"name="name" value="<?php echo $row['name'];?>">
 		 	<input type="text" placeholder="author" name="author" value="<?php echo $row['author'];?>">
 		 	<input type="number" placeholder="no. of copies" name="copies" value="<?php echo $row['no_of_copies'];?>"><br>
-		    <input type="submit">
+		    <input type="button" value="Submit" onclick="send()">
 		 			 </form>
 		 			</div>
-			<?php
-			if(isset($_SESSION["empty"]))
-				echo '<script>alert("One or more empty fields!")</script>';
-			unset($_SESSION["empty"]);
-			if(isset($_SESSION["zerocop"]))
-				echo '<script>alert("Copies cannot be less than zero!")</script>';
-			unset($_SESSION["zerocop"]);
-			if(isset($_SESSION["succ"]))
-				echo '<script>alert("Success!")</script>';
-			unset($_SESSION["succ"]);
-			?>
 		</p>
 		<div class='goBack'>
-          <a href="book_view.php">Go back!</a>
+          <input type="button" id="go" value="Go Back!" onclick="back1()">
       </div>
 	</body>
 </html>
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript">
+         function send()
+         {
+             $.post("edit1.php",$("#form").serialize(),function(data) {alert(data);});
+         }
+      </script>

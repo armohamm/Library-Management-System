@@ -56,7 +56,7 @@ hr{
 	<form action = "welcome.php" method="post" >
 		<input type="text" placeholder="email" name="username">
 		<input type="password" placeholder="password" name="password"><br>
-		<input type="submit" name="submit" value="Login">
+		<input type="submit" name="button" value="Login">
 	</form>
 	<p></p>
 	</div>
@@ -74,7 +74,6 @@ hr{
 			<div class="grid">
 		<div class="col">
               <img src="download.jpg">
-
 		</div>
 		<div class="col">
               <img src="d2.jpg">

@@ -1,6 +1,5 @@
 <?php
 session_start();
-include 'header.php';
 if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
   {
       $_SESSION["notlogged"]=1;
@@ -33,14 +32,12 @@ else
     $prevcop-=$cop;
     if($prevcop<0)
     {
-      $_SESSION["zerocop"]=1;
-      header("Location: book_del.php");
+      echo "Copies cannot be less than zero";
       exit();
     }
     $res=mysqli_query($conn,"UPDATE book SET no_of_copies='$prevcop',stack='$stack' WHERE id='$id'");
     if(!$res)
     	exit("Error Encountered: Connection Problem");
-    $_SESSION["success"]=1;
-    header("Location: book_del.php");
+    echo "Success!";
 }
 ?>
