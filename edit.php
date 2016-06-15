@@ -12,7 +12,7 @@ if(!(isset($_SESSION["authuser"])) && !(isset($_SESSION["user"])))
   }
   include 'header.php';
 
-$conn = mysqli_connect("localhost", "root", "devansh2497","library");
+$conn = mysqli_connect("mysql.hostinger.in", "u346184727_root", "devansh","u346184727_lib");
 if (!$conn) 
 {
     die("Connection failed: " . mysqli_connect_error());

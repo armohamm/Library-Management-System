@@ -7,7 +7,7 @@ if((isset($_SESSION["user"])) || (isset($_SESSION["authuser"])))
  }
 $_SESSION["username"]=$_POST["username"];
 $_SESSION["password"]=$_POST["password"];
-$conn = mysqli_connect("localhost", "root", "devansh2497","library");
+$conn = mysqli_connect("mysql.hostinger.in", "u346184727_root", "devansh","u346184727_lib");
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }

@@ -13,7 +13,7 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="HandheldFriendly" content="true">
-   	<h2 style="text-align:center;color:#fff">Borrow a book from the library</h2>
+   	<h2 style="text-align:center;color:#fff">Borrow a book from the u346184727_lib</h2>
     <link rel="stylesheet" type="text/css" href="login.css">
     <link rel="stylesheet" type="text/css" href="goback.css">
    </head>

@@ -6,10 +6,10 @@ if(isset($_SESSION["user"]) || isset($_SESSION["authuser"]))
   header("Location: book_menu.php");
   exit();
 }
-$username="root";
-$password="devansh2497";
-$servername="localhost";
-$dbname="library";
+$username="u346184727_root";
+$password="devansh";
+$servername="mysql.hostinger.in";
+$dbname="u346184727_lib";
 $conn=mysqli_connect($servername,$username,$password,$dbname);
 if(!$conn)
 	die("Connection Failed: ").mysqli_connect_error();
@@ -36,7 +36,7 @@ if(!$res)
    <div class='cover'></div>
   <div id='a' style="text-align:center	">
    <?php
-echo "Welcome to our library ".$_POST["name"];
+echo "Welcome to our Library ".$_POST["name"];
 $result=mysqli_query($conn,"SELECT * from user WHERE email='$email'");
  while($row = mysqli_fetch_assoc($result))
  {

@@ -156,7 +156,7 @@ background-color: black;
 			echo '<div class="contact nav-elements">
 			<a href="logout.php" style="height:100%;">Logout</a>
 		</div>';
-		else if($_SERVER['PHP_SELF']!="/library/register1.php")
+		else if($_SERVER['PHP_SELF']!="/u346184727_lib/register1.php")
 			echo '<div class="contact nav-elements">
 			<a href="register1.php" style="height:100%;">Register</a>
 		</div>';
@@ -183,7 +183,7 @@ background-color: black;
 			<?php 
 			if(isset($_SESSION["authuser"]) || isset($_SESSION["user"]))
 				echo '<li><a href="logout.php">Logout</a></li>';
-			else if($_SERVER['PHP_SELF']!="/library/register1.php")
+			else if($_SERVER['PHP_SELF']!="/register1.php")
 				echo '<li><a href="register1.php">Register</a></li>';
 			else
 				echo '<li><a href="index.php">Home</a></li>';
