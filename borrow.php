@@ -53,7 +53,7 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
    	  </form>
     </div>
     </div><div class='goBack'>
-    <input type="button" id="go" value="Go Back!" onclick="back2()">
+    <input type="button" id="go" value="Go Back!" <?php if(isset($_GET['id'])) echo 'onclick="back2()"'; else echo 'onclick="back()"';?>>
   </div>
   <script type="text/javascript" src="ajax.js"></script>
    </body>
