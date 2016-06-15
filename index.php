@@ -86,6 +86,8 @@ hr{
 		</div>
 	</div>
 	</div>
+		<script> var aax_size='728x90'; var aax_pubname = 'thelib044-21'; var aax_src='302';</script>
+		<script src="http://c.amazon-adsystem.com/aax2/assoc.js"></script>
 </body>
 <?php
 if(isset($_SESSION["check"]))
