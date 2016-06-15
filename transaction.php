@@ -28,6 +28,13 @@
 	<div class='tbl-content'>
 		<table cellpadding="0" cellspacing="0" border="0">
 			<?php
+			     $conn=mysqli_connect("mysql.hostinger.in","u346184727_root","devansh","u346184727_lib");
+	              if(!$conn)
+	              die("Connection Error: ").mysqli_connect_error();
+                  $email=$_SESSION["username"];
+                   $row=mysqli_fetch_assoc(mysqli_query($conn,"select * from user where email='$email'"));
+                  $uid=$row['id'];
+                 $name=$row['name'];
 			     $sql="SELECT * from transaction where user_id='$uid'";
 			     $res=mysqli_query($conn,$sql);
 			     while($row=mysqli_fetch_assoc($res))
