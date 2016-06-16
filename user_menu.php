@@ -22,6 +22,12 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
      	          <h2 style="text-align:center;color:#fff">Menu for the User!</h2>
           </div>
      	</head>
+        <div class="cssload-thecube">
+  <div class="cssload-cube cssload-c1"></div>
+  <div class="cssload-cube cssload-c2"></div>
+  <div class="cssload-cube cssload-c4"></div>
+  <div class="cssload-cube cssload-c3"></div>
+</div>
         <style type="text/css">
   .select{
   width: 330px;
