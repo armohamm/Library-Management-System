@@ -32,21 +32,9 @@ if(!$res)
    	header("Location: register1.php");
    	exit();
    }
-   ?>
-   <div class='cover'></div>
-  <div id='a' style="text-align:center	">
-   <?php
-echo "Welcome to our Library ".$_POST["name"];
 $result=mysqli_query($conn,"SELECT * from user WHERE email='$email'");
- while($row = mysqli_fetch_assoc($result))
- {
- 	echo "<br><strong> Your User Id no. is: ".$row["id"]."</strong>";
-	$_SESSION["user"]=2;
-	$_SESSION["username"]=$_POST["name"];
-	$_SESSION["password"]=$_POST["password"];
-	echo "<br>Go to the User Menu!<br><a href=\"user_menu.php\">Click here for the User Menu</a>";
- }
- ?></div><?php
- echo "</html>";
- mysqli_close($conn);
-?>
+ $row = mysqli_fetch_assoc($result);
+ $_SESSION["id"]=$row['id'];
+ header("Location: user_menu.php");
+ exit();
+ ?>

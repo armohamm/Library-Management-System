@@ -92,6 +92,8 @@ if(!isset($_SESSION["user"]) && !isset($_SESSION["authuser"]))
      </div>
      </div>
      <?php
+     if(isset($_SESSION["id"]))
+           echo '<script>alert("Welcome to the Library.")</script>';
      if(isset($_SESSION["nobooks"]))
           echo '<script>alert("You have no books to return")</script>';
      unset($_SESSION["nobooks"]);
