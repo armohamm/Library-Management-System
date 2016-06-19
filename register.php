@@ -34,6 +34,7 @@ if(!$res)
    }
 $result=mysqli_query($conn,"SELECT * from user WHERE email='$email'");
  $row = mysqli_fetch_assoc($result);
+ $_SESSION["user"]=2;
  $_SESSION["id"]=$row['id'];
  header("Location: user_menu.php");
  exit();
