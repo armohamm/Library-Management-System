@@ -41,6 +41,10 @@ hr{
 .icon{
 	padding-top: 20px;
 }
+{
+	-webkit-transition:0.8s;
+	transition:0.8s;
+}
 </style>
 <head><link rel='shortcut icon' type='image/ico' href='favicon.ico'>
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -58,10 +62,11 @@ hr{
 		<input type="password" placeholder="password" name="password"><br>
 		<input type="submit" name="button" value="Login">
 	</form>
+	<a href="#grid" id="link"><i class="fa fa-arrow-down" style="font-size:28px"></i></a>
 	<p></p>
 	</div>
 </div>
-	<div class="grid-container">
+	<div class="grid-container" >
 		<strong>Welcome to the Library</strong>
 		<div class='icon'>
 			<hr>
@@ -71,7 +76,7 @@ hr{
 		<p>
 			See Our Best Rated Books
 		</P>
-			<div class="grid">
+			<div class="grid" id ="grid">
 		<div class="col">
               <img src="download.jpg">
 		</div>
@@ -86,7 +91,15 @@ hr{
 		</div>
 	</div>
 	</div>
+	<script> var aax_size='728x90'; var aax_pubname = 'thelib044-21'; var aax_src='302';</script>
+		<script src="http://c.amazon-adsystem.com/aax2/assoc.js"></script>
 </body>
+<script type="text/javascript">
+$("#link").click(function(event){
+    event.preventDefault();
+    $("html, body").animate({scrollTop: $(this).offset().top +400},2600	);
+});
+</script>
 <?php
 if(isset($_SESSION["check"]))
 echo '<script>alert("Incorrect Username or Password")</script>';

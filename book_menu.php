@@ -20,6 +20,12 @@ if(!(isset($_SESSION["authuser"])))
   <link rel="stylesheet" type="text/css" href="goback.css">
   <link rel="stylesheet" type="text/css" href="table.css">
   </head>
+  <div class="cssload-thecube">
+  <div class="cssload-cube cssload-c1"></div>
+  <div class="cssload-cube cssload-c2"></div>
+  <div class="cssload-cube cssload-c4"></div>
+  <div class="cssload-cube cssload-c3"></div>
+</div>
   <style type="text/css">
   .select{
   width: 330px;
