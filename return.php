@@ -1,3 +1,6 @@
+<?php
+ include 'check.php';
+?>
    <head><link rel='shortcut icon' type='image/ico' href='favicon.ico'>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
