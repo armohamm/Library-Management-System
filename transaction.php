@@ -1,3 +1,5 @@
+<?php
+include 'check1.php'?>
 <head>
 		<link rel='shortcut icon' type='image/ico' href='favicon.ico'>
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -6,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="table.css">
 		<link rel="stylesheet" type="text/css" href="goback.css">
 		<h3 style="text-align:center;color:#fff"> View the currently borrowed books!</h3>
+         <script src = "ajax.js"></script>
 	</head>
 	<style type="text/css">
 	#a{
